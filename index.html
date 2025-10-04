@@ -1,76 +1,128 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İbrahim Eren Ovalı - Tanıtım</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>İbrahim Ovalı — Tanıtım</title>
+  <meta name="description" content="İbrahim Ovalı'nın kişisel tanıtım sayfası." />
+  <style>
+    /* Temel sıfırlama */
+    * {box-sizing: border-box; margin: 0; padding: 0;}
+    html,body {height:100%; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111;}
+    body {display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#f6fbff 0%, #ffffff 100%); padding:24px;}
+    .card {
+      width:100%;
+      max-width:940px;
+      background:#fff;
+      border-radius:16px;
+      box-shadow: 0 8px 30px rgba(17,24,39,0.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:0;
+    }
+
+    /* Sol kolon (profil) */
+    .profile {
+      padding:28px;
+      background: linear-gradient(180deg, #0ea5a4 0%, #06b6d4 100%);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      gap:16px;
+    }
+    .avatar {
+      width:140px; height:140px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.18);
+      display:flex; align-items:center; justify-content:center;
+      font-size:48px; font-weight:700;
+      color:#fff;
+      border:4px solid rgba(255,255,255,0.12);
+    }
+    h1 {font-size:20px; margin-top:6px; font-weight:700;}
+    p.role {opacity:0.95; font-size:14px; margin-top:0;}
+    .socials {display:flex; gap:10px; margin-top:6px;}
+    .socials a {
+      background:rgba(255,255,255,0.12);
+      padding:8px 12px; border-radius:10px; text-decoration:none; color:#fff; font-size:13px;
+      transition:transform .12s ease;
+    }
+    .socials a:hover{transform:translateY(-3px);}
+
+    /* Sağ kolon (içerik) */
+    .content {padding:28px 32px; display:flex; flex-direction:column; gap:18px;}
+    .section {padding-bottom:8px;}
+    h2 {font-size:16px; margin-bottom:8px;}
+    p {line-height:1.5; color:#333; font-size:14px;}
+    .links {display:flex; gap:10px; flex-wrap:wrap;}
+    .btn {
+      display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none;
+      background:#0f172a; color:#fff; font-size:13px;
+    }
+
+    .skills {display:flex; gap:8px; flex-wrap:wrap;}
+    .skill {background:#f1f5f9; padding:6px 10px; border-radius:999px; font-size:13px; color:#0f172a;}
+
+    footer {margin-top:auto; font-size:13px; color:#666;}
+
+    /* Responsive */
+    @media (max-width:800px) {
+      .card {grid-template-columns: 1fr; max-width:720px;}
+      .profile {flex-direction:row; gap:16px; padding:18px;}
+      .avatar {width:88px;height:88px;font-size:28px;}
+      h1{font-size:18px;}
+      .content{padding:18px;}
+    }
+  </style>
 </head>
 <body>
-    <!-- Başlık ve Kahraman Alanı -->
-    <header>
-        <div>
-            <mark><h1>Merhaba, ben İbrahim </h1></mark>
-            <h6><p>Web geliştirme</h6> ve <strong>teknoloji tutkunu</strong></p>
-            <p><a href="#contact">İletişime Geç</a></p>
+  <main class="card" role="main">
+    <aside class="profile" aria-label="Profil">
+      <div class="avatar" aria-hidden="true">İO</div>
+      <div style="text-align:center;">
+        <h1>İbrahim Ovalı</h1>
+        <p class="role">Halk ağzıyla gerçekçi haber tarzı videolar • İçerik üreticisi</p>
+        <div class="socials" aria-label="Sosyal bağlantılar">
+          <a href="#" title="YouTube">YouTube</a>
+          <a href="#" title="Instagram">Instagram</a>
+          <a href="#" title="GitHub">GitHub</a>
         </div>
-        <hr>
-    </header>
+      </div>
+    </aside>
 
-    <!-- Hakkımda Bölümü -->
-    <section id="about">
-        <strong>hakkımda</strong>
-        <p>Ben <strong>İbrahim Ovalı</strong>. Yeni teknolojiler öğrenmeyi ve projeler geliştirmeyi çok seviyorum. Bu site benim kısa tanıtım sayfam.</p>
-        <ul>
-            <li>Motivasyon: Öğrenmeye açık ve çözüm odaklı</li>
-            <li>Hobiler: Kod yazmak, oyun oynamak, teknolojiyi takip etmek</li>
-            <li>Hedef: Web geliştirme alanında kendimi sürekli geliştirmek</li>
-        </ul>
+    <section class="content">
+      <div class="section">
+        <h2>Hakkımda</h2>
+        <p>Merhaba — ben İbrahim. Kısa ve net haber anlatımı, gerçekçi dil kullanımı ve etkili video kurgu ile hikâyeler anlatıyorum. Bu sayfa sadece HTML kullanılarak hazırlanmıştır; hızlı, sade ve her yerde çalışır.</p>
+      </div>
+
+      <div class="section">
+        <h2>Öne çıkan işler</h2>
+        <p>- Kısa haber serisi (YouTube)</p>
+        <p>- Yerel gündem videoları</p>
+        <div class="links" style="margin-top:8px;">
+          <a class="btn" href="#" title="Projeler">Projelerime gözat</a>
+          <a class="btn" href="#" title="İletişim">İletişime geç</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Yetenekler</h2>
+        <div class="skills" aria-hidden="true">
+          <span class="skill">Haber Anlatımı</span>
+          <span class="skill">Video Kurgu</span>
+          <span class="skill">Senaryo</span>
+          <span class="skill">Sosyal Medya</span>
+        </div>
+      </div>
+
+      <footer>
+        <p>Bu sayfa sadece HTML (iç stil) ile oluşturuldu — Sublime Text'te düzenleyip GitHub Pages üzerinden yayınlayabilirsiniz.</p>
+      </footer>
     </section>
-
-    <!-- Yetenekler Bölümü -->
-    <section id="skills">
-        <h2>Yeteneklerim</h2>
-        <article>
-            <h3>HTML</h3>
-            <p>Web sayfaları için yapı ve içerik tasarlarım.</p>
-        </article>
-        <article>
-            <h3>CSS</h3>
-            <p>Site tasarımını modern ve okunabilir hale getiririm.</p>
-        </article>
-        <article>
-            <h3>JavaScript</h3>
-            <p>Web sitelerine etkileşim ve animasyon eklerim.</p>
-        </article>
-    </section>
-
-    <!-- İletişim Bölümü -->
-    <section id="contact">
-        <h2>İletişim</h2>
-        <p>Email: <a href="mailto:ibrahimerenovali@gmail.com">ibrahim@example.com</a></p>
-        <p>Telefon: 0551-061-2003/p>
-        <h3>Sosyal Medya</h3>
-        <ul>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">GitHub</a></li>
-        </ul>
-    </section>
-
-    <!-- Alt Bilgi -->
-    <footer>
-        <hr>
-        <p>&copy; 2025 İbrahim Ovalı. Tüm hakları saklıdır.</p>
-    </footer>
+  </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
