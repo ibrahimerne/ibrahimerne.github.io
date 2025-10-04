@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    text-align: center;
+}
+
+/* HEADER & HERO */
+header {
+    background: linear-gradient(to right, #4CAF50, #81C784);
+    color: white;
+    padding: 100px 20px 60px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.hero p {
+    margin: 10px 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: #4CAF50;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #81C784;
+    color: white;
+}
+
+/* SECTIONS */
+section {
+    background: white;
+    margin: 30px auto;
+    padding: 30px 20px;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* SKILLS CARDS */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card i {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* SOCIAL ICONS */
+.socials a {
+    margin: 0 10px;
+    color: #4CAF50;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #81C784;
+}
+
+/* FOOTER */
+footer {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+}
