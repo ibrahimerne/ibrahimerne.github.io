@@ -1,509 +1,62 @@
-İçeriğe geç
-Sohbet geçmişi
-
-Şunu dedin:
-ben nsaıl kendi internet sitesi kurabilirim html kodları ile
-ChatGPT:
-
-9s boyunca düşündüm
-İbrahim — harikasın, başlayalım! Aşağıda HTML/CSS ile kendi basit web siteni sıfırdan nasıl kuracağına dair açıklayıcı, adım adım rehber ve çalıştırıp yayınlayabileceğin tam örnek dosyalar var. Sublime Text ile çalışacağına göre örnekleri doğrudan kopyalayıp yapıştırabilirsin.
-
-1) Gerekli araçlar (hafif)
-Bir metin editörü: Sublime Text (zaten kullanıyorsun) veya VS Code.
-
-Tarayıcı: Chrome/Firefox/Edge.
-
-(Yayınlamak istersen) GitHub hesabı veya Netlify/Vercel hesabı.
-
-2) Basit proje yapısı
-my-website/
-├─ index.html
-├─ styles.css
-└─ script.js  (opsiyonel)
-3) index.html — hazır başlangıç dosyası
-Aşağıyı index.html adıyla kaydet:
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>İbrahim'in Web Sitesi</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İbrahim Ovalı - Tanıtım</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1>İbrahim'in Web Sitesi</h1>
-      <nav>
-        <a href="#home">Anasayfa</a>
-        <a href="#about">Hakkımda</a>
-        <a href="#contact">İletişim</a>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <div class="hero">
+            <h1>Merhaba, ben İbrahim!</h1>
+            <p>Web geliştirme ve teknoloji tutkunu</p>
+            <a href="#contact" class="btn">İletişime Geç</a>
+        </div>
+    </header>
 
-  <main class="container">
-    <section id="home" class="hero">
-      <h2>Hoş geldin 👋</h2>
-      <p>Bu, HTML + CSS ile yapılmış basit bir tek sayfalık site örneğidir.</p>
-      <a class="btn" href="#about">Devam et</a>
+    <section id="about">
+        <h2>Hakkımda</h2>
+        <p>Ben İbrahim Ovalı. Yeni teknolojiler öğrenmeyi ve projeler geliştirmeyi çok seviyorum. Bu site benim kısa tanıtım sayfam.</p>
     </section>
 
-    <section id="about" class="card">
-      <h3>Hakkımda</h3>
-      <p>Buraya kısa bir tanıtım yazısı yazabilirsin. Hobiler, projeler, vs.</p>
+    <section id="skills">
+        <h2>Yeteneklerim</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fab fa-html5 fa-3x"></i>
+                <h3>HTML</h3>
+                <p>Web sayfaları için yapı ve içerik tasarlarım.</p>
+            </div>
+            <div class="card">
+                <i class="fab fa-css3-alt fa-3x"></i>
+                <h3>CSS</h3>
+                <p>Site tasarımını modern ve güzel hale getiririm.</p>
+            </div>
+            <div class="card">
+                <i class="fab fa-js-square fa-3x"></i>
+                <h3>JavaScript</h3>
+                <p>Web sitelerine etkileşim ve animasyon eklerim.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="card">
-      <h3>İletişim</h3>
-      <p>E-posta: <a href="mailto:ornek@ornek.com">ornek@ornek.com</a></p>
+    <section id="contact">
+        <h2>İletişim</h2>
+        <p>Email: ibrahim@example.com</p>
+        <p>Telefon: 0555-555-5555</p>
+        <div class="socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <small>© 2025 İbrahim. Tüm hakları saklıdır.</small>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2025 İbrahim Ovalı</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-4) styles.css — basit stiller
-Aşağıyı styles.css adıyla kaydet:
-
-:root{
-  --bg: #f7f7f8;
-  --card: #ffffff;
-  --accent: #0066cc;
-  --text: #222;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.5;
-}
-.container{
-  width: min(1000px, 94%);
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-.site-header{
-  background: white;
-  border-bottom: 1px solid #e6e6e6;
-}
-.site-header .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
-.site-header nav a{
-  margin-left: 12px;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:600;
-}
-.hero{
-  background: linear-gradient(180deg, rgba(0,102,204,0.08), transparent);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-top:1rem;
-}
-.btn{
-  display:inline-block;
-  margin-top:1rem;
-  padding: 0.6rem 1rem;
-  text-decoration:none;
-  border-radius:8px;
-  font-weight:700;
-  background:var(--accent);
-  color:white;
-}
-.card{
-  background: var(--card);
-  padding:1.2rem;
-  border-radius:10px;
-  box-shadow: 0 6px 18px rgba(14,14,14,0.04);
-  margin-top:1rem;
-}
-.site-footer{
-  text-align:center;
-  padding:1.2rem 0;
-  color:#666;
-  margin-top:2rem;
-}
-5) script.js — küçük etkileşim (opsiyonel)
-script.js oluşturup kopyala (isteğe bağlı):
-
-// Basit: sayfa açıldığında konsola hoşgeldin yazısı
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("Hoşgeldin, İbrahim — siten yüklendi!");
-});
-6) Yerelde çalıştırma (hemen dene)
-Dosyaları kaydet (index.html, styles.css, script.js) aynı klasörde.
-
-index.html dosyasına çift tıkla — tarayıcı açılıp sayfayı göreceksin.
-
-Alternatif: Sublime içinde "Preview" eklentisi veya VS Code'da Live Server kullanabilirsin.
-
-7) Siteni internetten erişilebilir yapma — kolay yollar
-Aşağıdan birini seçebilirsin (hepsi ücretsiz seçenekler sunar):
-
-a) GitHub Pages (kolay, ücretsiz)
-
-Bir GitHub hesabı aç.
-
-Yeni bir repo oluştur: kullaniciadi.github.io (kullanıcı adı yerine GitHub kullanıcı adını koy).
-
-Proje dosyalarını repo'ya yükle (push).
-
-Repo ismi doğruysa site otomatik olarak https://kullaniciadi.github.io/ adresinde yayına geçer.
-
-b) Netlify (sürükle-bırak veya Git ile)
-
-Netlify'ye kaydol, siteni doğrudan repo ile bağla ya da index.html içeren klasörü sürükleyip bırak.
-
-Alan adı Netlify tarafından verilir; istersen özel domain bağlayabilirsin.
-
-c) Vercel
-
-Özellikle front-end projelerine uygun, repo ile bağlantı kurulup otomatik deploy sağlar.
-
-Not: Özel domain (ör. seninadim.com) almak istersen domain registrar'dan satın alıp DNS ayarlarıyla GitHub Pages/Netlify/Vercel'e yönlendirirsin (CNAME/A kaydı).
-
-8) Git ile hızlı yayın (temel komutlar)
-Eğer bilgisayarında Git varsa:
-
-cd my-website
-git init
-git add .
-git commit -m "İlk sürüm"
-# GitHub'da repo oluşturduktan sonra:
-git remote add origin https://github.com/KULLANICIADI/REPO.git
-git branch -M main
-git push -u origin main
-9) Sonraki adımlar / İyileştirme fikirleri
-Mobil uyumluluk (media queries) ekle.
-
-Daha iyi tipografi için Google Fonts kullan.
-
-İletişim formu ekle (Formspree ya da Netlify Forms ile backend olmadan).
-
-Projelerini sergilemek için "Projects" bölümü oluştur.
-
-Basit bir CMS istersen (Netlify CMS, Forestry) ekleyebilirsin.
-
-İbrahim, istersen:
-
-Bu template'i Sublime için hazır bir zip olarak hazırlayıp içindeki dosyalarla verebilirim,
-
-Ya da GitHub Pages için adım adım (ekran görüntülü) rehber yapıp direkt deploy ettirebilirim.
-
-Hemen hangisini istersin? (Birini seç yeter — ben detaylı adımları hemen buradan yazayım.)
-
-Şunu dedin:
-Yüklenmiş görüntü
-böyle yer oldu
-ChatGPT:
-Gördüğüm ekran GitHub’daki Projects bölümü, yani görev/iş takibi için kullanılan bir tablo. Ama web siteni yayınlamak için Repository (depo) oluşturman gerekiyor.
-
-Adım adım sana doğru yolu göstereyim:
-
-1. Repository (Depo) Oluştur
-GitHub ana sayfana git.
-
-Sağ üstteki “+” işaretine tıkla → New repository seç.
-
-Depo ismini şu formatta ver:
-
-kullaniciadın.github.io
-(örnek: ibrahimerne.github.io)
-
-Bu isim çok önemli! Böyle yaparsan GitHub Pages otomatik olarak siteni bu adreste açar: https://ibrahimerne.github.io/
-
-Repo’yu Public yap.
-
-İstersen README oluşturabilirsin ama zorunlu değil.
-
-Create repository butonuna bas.
-
-2. Site Dosyalarını Yükle
-Senin elinde index.html, styles.css ve script.js dosyaları olacak.
-
-Yeni açtığın repo’da “Add file → Upload files” seç.
-
-Bilgisayarındaki dosyaları sürükle-bırak yap.
-
-Commit et (altta yeşil Commit changes tuşu var).
-
-3. GitHub Pages Ayarı
-Repo’nun ayarlarına (Settings) git.
-
-Sol menüde Pages sekmesini bul.
-
-Branch kısmında main branch’i ve /root seç.
-
-Kaydet.
-
-Birkaç dakika içinde siten şu adreste açılacak:
-
-https://ibrahimerne.github.io/
-👉 Sen şu an yanlış yerde (Projects bölümündesin). Buradan çık, Repositories sekmesine git → oradan yeni repo oluştur.
-
-İstersen ben sana hemen kullanabileceğin ilk index.html dosyasını hazır veririm. Onu direkt repo’ya atarsın ve site açılır.
-
-İbrahim, ister misin ben sana o ilk hazır index.html dosyasını direkt vereyim?
-
-Şunu dedin:
-add fileyi nerden bulucam
-ChatGPT:
-Tamam İbrahim 👍 sana adım adım göstereyim, çünkü şu an “Projects” sayfasındasın, ama bizim gitmemiz gereken yer Repositories kısmı.
-
-🔹 1. Repository’ye Git
-GitHub ana sayfanın üst kısmında menü var: Overview – Repositories – Projects – Packages…
-
-Oradan Repositories’e tıkla.
-
-Daha önce hiç repo açmadıysan boş görünecek, ama New (yeni repo) butonu olacak.
-
-🔹 2. Repo Açtıktan Sonra
-Repo’yu açınca ekranın üst kısmında şunları göreceksin:
-
-Code
-
-Issues
-
-Pull requests
-
-Actions
-
-Projects
-
-Wiki
-
-Security
-
-Insights
-
-Settings
-
-Sen Code sekmesinde kalacaksın.
-
-🔹 3. Add file Butonu
-Repo’nun Code sayfasında sağ tarafta (dosya listesi üstünde) bir yeşil buton olacak:
-
-Add file → buna tıklayınca şu seçenek çıkar:
-
-Create new file (yeni dosya oluştur)
-
-Upload files (bilgisayardan dosya yükle)
-
-Bizim işimize yarayan: Upload files ✅
-
-🔹 4. Dosyaları Yükle
-index.html, styles.css, script.js dosyalarını sürükle-bırak yap.
-
-Altta Commit changes butonuna bas → dosyalar repo’ya kaydolur.
-
-👉 İstersen ben sana ekranın nerede olduğunu küçük bir resimle tarif edeyim (örnek repo ekranı), yoksa sadece yazılı tarif yeterli mi?
-
-Şunu dedin:
-add file yok
-ChatGPT:
-Anladım İbrahim 👍 “Add file” butonu yoksa iki ihtimal var:
-
-Henüz repository (repo) oluşturmadın, şu an hâlâ Projects bölümündesin.
-
-Repo açtın ama boş değilse ya da başka görünümdeyse buton farklı yerde olabilir.
-
-✅ Yapman Gereken (en garantili yol)
-GitHub ana sayfana git → sol menüde Repositories sekmesine tıkla.
-
-Sağ üstte yeşil New butonuna bas → yeni repo oluştur.
-
-İsim şu olmalı:
-
-ibrahimerne.github.io
-Public seç.
-
-README kutusunu işaretleme (boş repo daha kolay).
-
-Create repository de.
-
-Repo açıldıktan sonra ekranın ortasında şöyle bir alan çıkacak:
-
-“Quick setup”
-
-ve altında yeşil butonlar olur.
-
-Orada "uploading an existing file" diye küçük bir link göreceksin. Ona tıklarsan dosya yükleme ekranına gidersin.
-
-🔹 Eğer linki bulamazsan
-Repo açıldığında sayfanın üstünde <> Code sekmesi var.
-
-Onun sağ tarafında normalde Add file (yeşil buton) görünür.
-
-Yoksa repo tamamen boş olabilir → o zaman “Quick setup” ekranında uploading an existing file linki çıkar.
-
-Şimdi sana sorum: İstersen ben sana repo açma adımlarını ekran görüntülü örneklerle tarif edeyim mi, yoksa sadece yazılı tarif yeter mi?
-
-Şunu dedin:
-repo oluşturdum
-ChatGPT:
-Süper İbrahim 👏 artık doğru yoldayız! Şimdi yapman gereken, sitenin dosyalarını (index.html, styles.css, script.js) repo’ya yüklemek.
-
-🔹 1. Repo’ya Gir
-Sol üstte menüden Repositories → oluşturduğun repo’yu seç.
-
-Açılan sayfada en üstte Code, Issues, Pull requests, Actions sekmeleri olacak.
-
-Sen Code sekmesinde kalacaksın.
-
-🔹 2. Dosya Ekle
-Repo boşsa ekranda büyükçe yazılar çıkar:
-
-“Quick setup — if you’ve done this kind of thing before…”
-
-Hemen altında …or upload an existing file diye bir link olur. Ona tıklayabilirsin.
-
-Eğer dosya listesi görünüyorsa sağ üst tarafta Add file yeşil butonu çıkar:
-
-Ona tıkla → Upload files seç.
-
-🔹 3. Dosyaları Yükle
-Bilgisayarından index.html, styles.css, script.js dosyalarını sürükleyip bırak.
-
-Aşağıya inip yeşil Commit changes butonuna bas.
-
-🔹 4. Yayına Aç (GitHub Pages)
-Repo’da üst menüden Settings → sol menüde Pages bölümünü bul.
-
-Branch kısmında main → /root seç.
-
-Kaydet.
-
-Biraz bekledikten sonra siten şu adreste açılacak:
-
-https://ibrahimerne.github.io/
-👉 Şimdi istersen ben sana hazır index.html dosyası vereyim, onu direkt repo’ya atabilirsin. İstiyor musun?
-
-Şunu dedin:
-or upload an existing file bastım 
-ChatGPT:
-Harika İbrahim 👏 doğru yere geldin! Şimdi çok basit:
-
-🔹 1. Dosyaları Sürükle-Bırak
-Açılan ekranda büyük bir kutu göreceksin: “Drag files here to add them to your repository” yazıyor.
-
-Bilgisayarından index.html, styles.css, script.js dosyalarını bu kutuya sürükleyip bırak.
-
-🔹 2. Commit Et
-Aşağıda “Commit changes” bölümü var.
-
-“Commit directly to the main branch” seçili kalsın.
-
-Yeşil Commit changes butonuna tıkla.
-
-🔹 3. Dosyaları Gör
-Artık repo’na geri döndüğünde dosya listende index.html ve diğer dosyalar görünecek.
-
-🔹 4. Yayına Aç (GitHub Pages)
-Repo’nun üst kısmından Settings sekmesine git.
-
-Sol menüde Pages sekmesine tıkla.
-
-“Branch” kısmında main seç → / (root) seç → Save de.
-
-Birkaç dakika sonra siten şu adreste açılacak:
-
-https://ibrahimerne.github.io/
-👉 İstersen ben sana şimdi hazır örnek index.html dosyası vereyim ki direkt sürükleyip yükle, hiç uğraşmadan site açılmış olsun. İstiyor musun?
-
-Şunu dedin:
-styles.css ve script.js yok
-ChatGPT:
-Süper İbrahim 👌 hiç sorun değil.
-En temel siteyi açmak için tek bir index.html dosyası yeterli.
-
-Şimdi sana hazır bir tane vereyim. Bunu bilgisayarına index.html olarak kaydet, sonra GitHub’daki “upload file” ekranına sürükle ve yükle:
-
-<!doctype html>
-<html lang="tr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>İbrahim'in Sitesi</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-      text-align: center;
-    }
-    header {
-      background: #0066cc;
-      color: white;
-      padding: 1rem;
-    }
-    main {
-      padding: 2rem;
-    }
-    section {
-      background: white;
-      padding: 1.5rem;
-      margin: 1rem auto;
-      border-radius: 8px;
-      max-width: 600px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #eee;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>İbrahim'in Web Sitesi</h1>
-  </header>
-
-  <main>
-    <section>
-      <h2>Hoş geldiniz 👋</h2>
-      <p>Bu, sadece <b>index.html</b> dosyası ile yapılmış ilk sitemiz.</p>
-    </section>
-    <section>
-      <h3>Hakkımda</h3>
-      <p>Buraya kendin hakkında kısa bir yazı ekleyebilirsin.</p>
-    </section>
-    <section>
-      <h3>İletişim</h3>
-      <p>E-posta: <a href="mailto:ornek@mail.com">ornek@mail.com</a></p>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 İbrahim. Tüm hakları saklıdır.
-  </footer>
-</body>
-</html>
-📌 Yapacağın şey
-Bunu not defteri ya da Sublime Text’e yapıştır → index.html olarak kaydet.
-
-GitHub’daki “upload files” ekranına sürükleyip bırak.
-
-
-
-
-Dosya seçilmediDosya seçilmedi
-ChatGPT hata yapabilir. Önemli bilgileri kontrol edin.
-ChatGPT hâlâ bir yanıt oluşturuyor...
